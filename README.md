@@ -187,7 +187,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🔗 Links
 
-- **Demo**: [keyst.demo.com](https://keyst.demo.com)
+- **Demo**: [keyst-password.vercel.com](https://keyst.password.vercel.com)
 
 ---
 
