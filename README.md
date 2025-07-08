@@ -12,6 +12,7 @@
 - **Advanced Pattern Analysis** - Detects and prevents weak patterns automatically
 - **Entropy Calculation** - Provides accurate password strength assessment
 - **Zero Data Transmission** - All processing happens client-side
+- **Data Breach News** - Up-to-date information on recent security incidentsdvanced Password Generator
 
 ### ⚡ **Advanced Customization**
 - **Flexible Length Control** - 4-128 characters with visual feedback
@@ -35,6 +36,7 @@
 - **Cracking Time Estimation** - Realistic time-to-crack calculations
 - **Security Recommendations** - Personalized tips for better password hygiene
 - **Comprehensive Audit Trail** - Detailed security analysis with actionable feedback
+- **Latest Breach News** - Stay informed about recent data breaches and security incidents
 
 ## 🛠️ Tech Stack
 
@@ -101,6 +103,14 @@ npm run type-check # TypeScript type checking
 - **Instant Feedback**: Immediate breach status with detailed information
 - **Historical Context**: Shows breach count and severity
 
+### Data Breach News
+- **Latest Security Incidents**: Comprehensive list of recent data breaches
+- **Detailed Breach Information**: View affected services, dates, and compromised data types
+- **Affected Accounts Tracking**: See how many accounts were compromised in each breach
+- **Security Recommendations**: Get actionable advice for each breach
+- **In-App Details**: View all breach information without leaving the application
+- **Verification Status**: Know which breaches have been independently verified
+
 ## 🎯 Usage Examples
 
 ### Basic Password Generation
@@ -120,6 +130,13 @@ npm run type-check # TypeScript type checking
 2. Click on the security audit panel to expand detailed analysis
 3. Review breach status, security issues, and recommendations
 4. Adjust settings based on feedback for optimal security
+
+### Exploring Data Breach News
+1. Click on "Data Breaches" in the navigation bar
+2. Browse the list of recent security incidents
+3. Click on a breach to view detailed information
+4. Read security recommendations specific to each breach
+5. Use the "Back to all breaches" button to return to the list view
 
 ## 🎨 Design Philosophy
 
@@ -161,7 +178,8 @@ Keyst follows a **security-first, user-friendly** design philosophy:
 
 ## 🗺️ Roadmap
 
-### v2.0 (Coming Soon)
+### v2.0 (Current)
+- [x] Data Breach News with detailed information
 - [ ] Password history with secure storage
 - [ ] Bulk password generation
 - [ ] Advanced regex pattern support
