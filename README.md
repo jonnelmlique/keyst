@@ -2,7 +2,7 @@
 
 **Keyst** is a state-of-the-art, security-first password generator built with modern web technologies. It combines military-grade encryption, real-time breach detection, and an intuitive user interface to deliver the most secure password generation experience available.
 
-![Keyst Preview](./preview.png)
+![Keyst Preview](./public/assets/preview.png)
 
 ## 🚀 Features
 
@@ -151,27 +151,6 @@ Keyst follows a **security-first, user-friendly** design philosophy:
 - Cumulative Layout Shift: < 0.1
 - First Input Delay: < 100ms
 
-## 🤝 Contributing
-
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
-
-### Development Setup
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Make your changes with proper TypeScript types
-4. Add tests for new functionality
-5. Ensure all tests pass (`npm test`)
-6. Commit with conventional commits (`git commit -m 'feat: add amazing feature'`)
-7. Push to your branch (`git push origin feature/amazing-feature`)
-8. Open a Pull Request
-
-### Code Standards
-- TypeScript strict mode enabled
-- ESLint with security-focused rules
-- Prettier for consistent formatting
-- Comprehensive JSDoc documentation
-- 100% type coverage
-
 ## 📊 Security Metrics
 
 - **Randomness Quality**: Passes NIST randomness tests
@@ -209,16 +188,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🔗 Links
 
 - **Demo**: [keyst.demo.com](https://keyst.demo.com)
-- **Documentation**: [docs.keyst.com](https://docs.keyst.com)
-- **Security**: [security.keyst.com](https://security.keyst.com)
-- **Support**: [support@keyst.com](mailto:support@keyst.com)
 
 ---
 
 <div align="center">
 
 **Built with ❤️ for a more secure web**
-
-[Report Bug](https://github.com/your-username/keyst/issues) • [Request Feature](https://github.com/your-username/keyst/issues) • [Security Report](mailto:security@keyst.com)
 
 </div>
