@@ -57,7 +57,7 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/keyst.git
+git clone https://github.com/jonnelmlique/keyst.git
 cd keyst
 
 # Install dependencies
