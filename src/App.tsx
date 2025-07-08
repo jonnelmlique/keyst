@@ -1,13 +1,15 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion } from 'framer-motion';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { ThemeProvider } from './hooks/ThemeProvider';
-import ThemeToggle from './components/ThemeToggle';
+import ThemeToggleInline from './components/ThemeToggleInline';
 import PasswordDisplay from './components/PasswordDisplay';
 import type { PasswordDisplayRef } from './components/PasswordDisplay';
 import PasswordOptionsComponent from './components/PasswordOptions';
 import KeyboardShortcuts from './components/KeyboardShortcuts';
+import DataBreachNews from './components/DataBreachNews';
 import { generatePassword } from './utils/password';
-import { LockIcon, ShieldIcon, SettingsIcon, RefreshIcon, PrivacyIcon, SpeedIcon } from './components/Icons';
+import { LockIcon, ShieldIcon, SettingsIcon, RefreshIcon, NewsIcon } from './components/Icons';
 import type { PasswordOptions } from './types';
 
 function PasswordGenerator() {
@@ -76,7 +78,6 @@ function PasswordGenerator() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-gray-900 dark:to-indigo-950 transition-all duration-300">
       <KeyboardShortcuts onGenerate={handleGenerate} onCopy={handleCopy} />
-      <ThemeToggle />
       
       {/* Background Decoration */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
@@ -175,6 +176,7 @@ function PasswordGenerator() {
               onRegenerate={handleGenerate}
               onPasswordSelect={handlePasswordSelect}
             />
+            <DataBreachNews isHomepage={true} />
           </motion.div>
 
           {/* Password Options */}
@@ -234,64 +236,75 @@ function PasswordGenerator() {
           </div>
         </motion.div>
 
-        {/* Enhanced Footer */}
-        <motion.footer
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
-          className="mt-20 text-center space-y-12"
-        >
-          <div className="glass-effect p-4 sm:p-6 md:p-10 rounded-3xl max-w-6xl mx-auto border border-gray-200/50 dark:border-gray-700/50">
-            <div className="grid gap-8 sm:gap-10 md:grid-cols-3 md:gap-12">
-              <div className="group">
-                <div className="flex items-center justify-center gap-2 sm:gap-3 mb-4">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
-                    <ShieldIcon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
-                  </div>
-                  <h4 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100">Security First</h4>
-                </div>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                  Advanced cryptography with real-time breach detection and comprehensive security analysis
-                </p>
-              </div>
-              <div className="group">
-                <div className="flex items-center justify-center gap-2 sm:gap-3 mb-4">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
-                    <PrivacyIcon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
-                  </div>
-                  <h4 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100">Privacy Protected</h4>
-                </div>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                  Zero-knowledge architecture - all passwords generated locally with no data transmission
-                </p>
-              </div>
-              <div className="group">
-                <div className="flex items-center justify-center gap-2 sm:gap-3 mb-4">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
-                    <SpeedIcon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
-                  </div>
-                  <h4 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100">Modern Tech</h4>
-                </div>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                  Built with cutting-edge React, TypeScript, and advanced security libraries
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          <div className="text-sm text-gray-500 dark:text-gray-400">
-            <p>© 2025 Keyst Password Generator. Open source, privacy-focused, and built for security.</p>
-          </div>
-        </motion.footer>
+        {/* Generate button is the last element in this component */}
       </div>
     </div>
+  );
+}
+
+// Navigation component
+function Navbar() {
+  return (
+    <nav className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-md sticky top-0 z-10 shadow-md">
+      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+        <Link to="/" className="flex items-center gap-2 sm:gap-3">
+          <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center shadow-md">
+            <LockIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
+          </div>
+          <span className="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100">Keyst</span>
+        </Link>
+        <div className="flex items-center gap-2 sm:gap-6">
+          <div className="hidden sm:flex items-center gap-6">
+            <Link to="/" className="flex items-center gap-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+              <LockIcon className="w-4 h-4" />
+              <span>Home</span>
+            </Link>
+            <Link to="/data-breaches" className="flex items-center gap-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+              <NewsIcon className="w-4 h-4" />
+              <span>Data Breaches</span>
+            </Link>
+          </div>
+          
+          {/* Mobile navigation */}
+          <div className="flex sm:hidden items-center gap-3">
+            <Link to="/" className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300">
+              <LockIcon className="w-5 h-5" />
+            </Link>
+            <Link to="/data-breaches" className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300">
+              <NewsIcon className="w-5 h-5" />
+            </Link>
+          </div>
+          
+          {/* Theme toggle button - inline instead of fixed position */}
+          <ThemeToggleInline />
+        </div>
+      </div>
+    </nav>
   );
 }
 
 export default function App() {
   return (
     <ThemeProvider>
-      <PasswordGenerator />
+      <BrowserRouter>
+        <div className="min-h-screen bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
+          <Navbar />
+          <div className="container mx-auto px-4 py-8 sm:px-6 sm:py-12">
+            <Routes>
+              <Route path="/" element={<PasswordGenerator />} />
+              <Route path="/data-breaches" element={<DataBreachNews isHomepage={false} />} />
+            </Routes>
+          </div>
+          
+          <footer className="py-6 border-t border-gray-200/50 dark:border-gray-800/50 mt-10">
+            <div className="container mx-auto px-4 text-center text-sm text-gray-500 dark:text-gray-400">
+              <p>© {new Date().getFullYear()} Keyst Password Generator. Open source, privacy-focused, and secure.</p>
+            </div>
+          </footer>
+          
+          {/* Note: Keyboard shortcuts handled within PasswordGenerator component */}
+        </div>
+      </BrowserRouter>
     </ThemeProvider>
   );
 }
