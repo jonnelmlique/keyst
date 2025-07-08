@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion } from 'framer-motion';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { HashRouter, Routes, Route, Link } from 'react-router-dom';
 import { ThemeProvider } from './hooks/ThemeProvider';
 import ThemeToggleInline from './components/ThemeToggleInline';
 import PasswordDisplay from './components/PasswordDisplay';
@@ -286,7 +286,7 @@ function Navbar() {
 export default function App() {
   return (
     <ThemeProvider>
-      <BrowserRouter>
+      <HashRouter>
         <div className="min-h-screen bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
           <Navbar />
           <div className="container mx-auto px-4 py-8 sm:px-6 sm:py-12">
@@ -304,7 +304,7 @@ export default function App() {
           
           {/* Note: Keyboard shortcuts handled within PasswordGenerator component */}
         </div>
-      </BrowserRouter>
+      </HashRouter>
     </ThemeProvider>
   );
 }
