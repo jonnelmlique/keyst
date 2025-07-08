@@ -62,9 +62,9 @@ const PasswordDisplay = forwardRef<PasswordDisplayRef, PasswordDisplayProps>(
     }));
 
     const getPasswordDisplayClass = () => {
-      if (!password) return 'input-field font-mono text-lg min-h-[4rem] flex items-center justify-center text-center break-all relative';
+      if (!password) return 'input-field font-mono text-sm sm:text-base md:text-lg min-h-[3rem] sm:min-h-[4rem] flex items-center justify-center text-center break-all relative';
       
-      const baseClass = 'input-field font-mono text-lg min-h-[4rem] flex items-center justify-center text-center break-all relative transition-all duration-300';
+      const baseClass = 'input-field font-mono text-sm sm:text-base md:text-lg min-h-[3rem] sm:min-h-[4rem] flex items-center justify-center text-center break-all relative transition-all duration-300';
       
       if (breachInfo?.isBreached) {
         return `${baseClass} border-red-500 dark:border-red-400 bg-red-50 dark:bg-red-900/20`;
@@ -86,12 +86,14 @@ const PasswordDisplay = forwardRef<PasswordDisplayRef, PasswordDisplayProps>(
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="w-full px-2"
+                className="w-full px-2 py-2 overflow-x-auto scrollbar-thin"
               >
-                {password}
+                <div className="text-center break-all font-mono text-xs sm:text-sm md:text-base">
+                  {password}
+                </div>
               </motion.div>
             ) : (
-              <div className="text-gray-500 dark:text-gray-400">
+              <div className="text-gray-500 dark:text-gray-400 text-xs sm:text-sm md:text-base">
                 Generated password will appear here...
               </div>
             )}
@@ -155,13 +157,13 @@ const PasswordDisplay = forwardRef<PasswordDisplayRef, PasswordDisplayProps>(
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-4"
+            className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3 md:gap-4"
           >
             {/* Strength Indicator */}
-            <div className="glass-card p-4 space-y-3">
+            <div className="glass-card p-2 sm:p-3 md:p-4 space-y-1 sm:space-y-2 md:space-y-3">
               <div className="flex justify-between items-center">
-                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Strength</span>
-                <span className="text-sm font-bold">{strength.label}</span>
+                <span className="text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300">Strength</span>
+                <span className="text-xs sm:text-sm font-bold">{strength.label}</span>
               </div>
               <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
                 <motion.div
@@ -177,11 +179,11 @@ const PasswordDisplay = forwardRef<PasswordDisplayRef, PasswordDisplayProps>(
             </div>
 
             {/* Breach Status */}
-            <div className="glass-card p-4 space-y-3">
+            <div className="glass-card p-2 sm:p-3 md:p-4 space-y-1 sm:space-y-2 md:space-y-3">
               <div className="flex justify-between items-center">
-                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Security</span>
+                <span className="text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300">Security</span>
                 {isCheckingBreach ? (
-                  <div className="animate-spin w-4 h-4 border-2 border-blue-400 border-t-transparent rounded-full"></div>
+                  <div className="animate-spin w-3 h-3 sm:w-4 sm:h-4 border-2 border-blue-400 border-t-transparent rounded-full"></div>
                 ) : null}
               </div>
               {breachInfo ? (
@@ -209,9 +211,9 @@ const PasswordDisplay = forwardRef<PasswordDisplayRef, PasswordDisplayProps>(
             </div>
 
             {/* Crack Time */}
-            <div className="glass-card p-4 space-y-3">
+            <div className="glass-card p-3 md:p-4 space-y-2 md:space-y-3 col-span-2 sm:col-span-2 md:col-span-1">
               <div className="flex justify-between items-center">
-                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Crack Time</span>
+                <span className="text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300">Crack Time</span>
               </div>
               <div className="text-center">
                 <div className="text-lg font-bold text-blue-600 dark:text-blue-400">
@@ -226,26 +228,28 @@ const PasswordDisplay = forwardRef<PasswordDisplayRef, PasswordDisplayProps>(
         )}
 
         {/* Action Buttons */}
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-2 sm:gap-4">
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             onClick={handleCopy}
             disabled={!password}
-            className="btn-primary flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed h-12"
+            className="btn-primary flex items-center justify-center gap-1 sm:gap-3 text-xs sm:text-sm disabled:opacity-50 disabled:cursor-not-allowed h-10 sm:h-12"
           >
-            <CopyIcon className="w-5 h-5" />
-            {copied ? 'Copied!' : 'Copy Password'}
+            <CopyIcon className="w-4 h-4 sm:w-5 sm:h-5" />
+            <span className="hidden xs:inline">{copied ? 'Copied!' : 'Copy Password'}</span>
+            <span className="xs:hidden">{copied ? 'Copied!' : 'Copy'}</span>
           </motion.button>
           
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             onClick={onRegenerate}
-            className="btn-secondary flex items-center justify-center gap-3 h-12"
+            className="btn-secondary flex items-center justify-center gap-1 sm:gap-3 text-xs sm:text-sm h-10 sm:h-12"
           >
-            <RefreshIcon className="w-5 h-5" />
-            Regenerate
+            <RefreshIcon className="w-4 h-4 sm:w-5 sm:h-5" />
+            <span className="hidden xs:inline">Regenerate</span>
+            <span className="xs:hidden">New</span>
           </motion.button>
         </div>
 

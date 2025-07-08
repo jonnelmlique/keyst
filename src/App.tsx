@@ -92,22 +92,22 @@ function PasswordGenerator() {
           className="text-center mb-16"
         >
           <motion.div
-            className="flex items-center justify-center gap-6 mb-8"
+            className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 mb-4 sm:mb-8"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.1 }}
           >
             <div className="relative">
-              <div className="w-20 h-20 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-3xl flex items-center justify-center shadow-2xl transform rotate-3">
-                <LockIcon className="w-10 h-10 text-white" />
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-3xl flex items-center justify-center shadow-2xl transform rotate-3">
+                <LockIcon className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
               </div>
-              <div className="absolute -top-2 -right-2 w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center shadow-xl">
-                <ShieldIcon className="w-4 h-4 text-white" />
+              <div className="absolute -top-2 -right-2 w-6 h-6 sm:w-8 sm:h-8 bg-emerald-500 rounded-full flex items-center justify-center shadow-xl">
+                <ShieldIcon className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
               </div>
             </div>
-            <div className="text-left">
+            <div className="text-center sm:text-left">
               <motion.h1 
-                className="text-6xl md:text-7xl font-black bg-gradient-to-r from-gray-900 via-indigo-900 to-purple-900 dark:from-gray-100 dark:via-indigo-100 dark:to-purple-100 bg-clip-text text-transparent"
+                className="text-5xl sm:text-6xl md:text-7xl font-black bg-gradient-to-r from-gray-900 via-indigo-900 to-purple-900 dark:from-gray-100 dark:via-indigo-100 dark:to-purple-100 bg-clip-text text-transparent"
                 animate={{ backgroundPosition: ['0%', '100%', '0%'] }}
                 transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
               >
@@ -119,42 +119,42 @@ function PasswordGenerator() {
             </div>
           </motion.div>
           <motion.p 
-            className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed"
+            className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed px-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
           >
-            Create unbreakable passwords with advanced security features, real-time breach detection, and cryptographic strength analysis
+            Create unbreakable passwords with advanced security features and real-time breach detection
           </motion.p>
           
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4 }}
-            className="mt-8 flex items-center justify-center gap-8 text-sm"
+            className="mt-8 mobile-flex-col items-center justify-center gap-3 sm:gap-8 text-xs sm:text-sm"
           >
-            <div className="flex items-center gap-3 px-4 py-2 bg-emerald-50 dark:bg-emerald-900/20 rounded-full">
+            <div className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-1.5 sm:py-2 bg-emerald-50 dark:bg-emerald-900/20 rounded-full mb-2 sm:mb-0 w-full sm:w-auto">
               <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
               <span className="font-medium text-emerald-700 dark:text-emerald-300">Zero-Knowledge</span>
             </div>
-            <div className="flex items-center gap-3 px-4 py-2 bg-blue-50 dark:bg-blue-900/20 rounded-full">
+            <div className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-1.5 sm:py-2 bg-blue-50 dark:bg-blue-900/20 rounded-full mb-2 sm:mb-0 w-full sm:w-auto">
               <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
               <span className="font-medium text-blue-700 dark:text-blue-300">Breach Protected</span>
             </div>
-            <div className="flex items-center gap-3 px-4 py-2 bg-purple-50 dark:bg-purple-900/20 rounded-full">
+            <div className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-1.5 sm:py-2 bg-purple-50 dark:bg-purple-900/20 rounded-full w-full sm:w-auto">
               <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
               <span className="font-medium text-purple-700 dark:text-purple-300">Military Grade</span>
             </div>
           </motion.div>
         </motion.div>
 
-        <div className="grid gap-8 lg:grid-cols-2 max-w-5xl mx-auto">
+        <div className="grid gap-4 sm:gap-6 lg:gap-8 lg:grid-cols-2 max-w-5xl mx-auto">
           {/* Password Display */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
-            className="card p-8 order-2 lg:order-1"
+            className="card p-4 sm:p-6 md:p-8 order-2 lg:order-1"
           >
             <div className="flex items-center gap-4 mb-8">
               <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center shadow-xl">
@@ -182,7 +182,7 @@ function PasswordGenerator() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
-            className="card p-8 order-1 lg:order-2"
+            className="card p-4 sm:p-6 md:p-8 order-1 lg:order-2"
           >
             <div className="flex items-center gap-4 mb-8">
               <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-xl">
@@ -213,20 +213,21 @@ function PasswordGenerator() {
             whileTap={{ scale: 0.95 }}
             onClick={handleGenerate}
             disabled={!canGenerate}
-            className="btn-primary px-16 py-5 text-xl font-bold disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center gap-4 shadow-2xl"
+            className="btn-primary px-8 sm:px-12 md:px-16 py-4 sm:py-5 text-lg sm:text-xl font-bold disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center gap-2 sm:gap-4 shadow-2xl"
           >
-            <RefreshIcon className="w-7 h-7" />
-            Generate New Password
+            <RefreshIcon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" />
+            <span className="hidden xs:inline">Generate New Password</span>
+            <span className="xs:hidden">Generate</span>
           </motion.button>
-          <div className="mt-6 text-sm text-gray-500 dark:text-gray-400 space-y-2">
+          <div className="mt-4 sm:mt-6 text-xs sm:text-sm text-gray-500 dark:text-gray-400 space-y-2">
             <p className="font-medium">Keyboard shortcuts:</p>
-            <div className="flex items-center justify-center gap-6 text-xs">
-              <div className="flex items-center gap-2">
-                <kbd className="px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded">Ctrl/Cmd + G</kbd>
+            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 sm:gap-6 text-xs">
+              <div className="flex items-center gap-1 sm:gap-2">
+                <kbd className="px-1 sm:px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded text-xs">Ctrl/Cmd + G</kbd>
                 <span>Generate</span>
               </div>
-              <div className="flex items-center gap-2">
-                <kbd className="px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded">Ctrl/Cmd + C</kbd>
+              <div className="flex items-center gap-1 sm:gap-2">
+                <kbd className="px-1 sm:px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded text-xs">Ctrl/Cmd + C</kbd>
                 <span>Copy</span>
               </div>
             </div>
@@ -240,36 +241,36 @@ function PasswordGenerator() {
           transition={{ delay: 0.6 }}
           className="mt-20 text-center space-y-12"
         >
-          <div className="glass-effect p-10 rounded-3xl max-w-6xl mx-auto border border-gray-200/50 dark:border-gray-700/50">
-            <div className="grid md:grid-cols-3 gap-12">
+          <div className="glass-effect p-4 sm:p-6 md:p-10 rounded-3xl max-w-6xl mx-auto border border-gray-200/50 dark:border-gray-700/50">
+            <div className="grid gap-8 sm:gap-10 md:grid-cols-3 md:gap-12">
               <div className="group">
-                <div className="flex items-center justify-center gap-3 mb-4">
-                  <div className="w-14 h-14 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
-                    <ShieldIcon className="w-7 h-7 text-white" />
+                <div className="flex items-center justify-center gap-2 sm:gap-3 mb-4">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
+                    <ShieldIcon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                   </div>
-                  <h4 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Security First</h4>
+                  <h4 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100">Security First</h4>
                 </div>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                   Advanced cryptography with real-time breach detection and comprehensive security analysis
                 </p>
               </div>
               <div className="group">
-                <div className="flex items-center justify-center gap-3 mb-4">
-                  <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
-                    <PrivacyIcon className="w-7 h-7 text-white" />
+                <div className="flex items-center justify-center gap-2 sm:gap-3 mb-4">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
+                    <PrivacyIcon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                   </div>
-                  <h4 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Privacy Protected</h4>
+                  <h4 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100">Privacy Protected</h4>
                 </div>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                   Zero-knowledge architecture - all passwords generated locally with no data transmission
                 </p>
               </div>
               <div className="group">
-                <div className="flex items-center justify-center gap-3 mb-4">
-                  <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
-                    <SpeedIcon className="w-7 h-7 text-white" />
+                <div className="flex items-center justify-center gap-2 sm:gap-3 mb-4">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
+                    <SpeedIcon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                   </div>
-                  <h4 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Modern Tech</h4>
+                  <h4 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100">Modern Tech</h4>
                 </div>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                   Built with cutting-edge React, TypeScript, and advanced security libraries

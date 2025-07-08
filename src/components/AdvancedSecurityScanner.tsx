@@ -174,23 +174,22 @@ export default function AdvancedSecurityScanner({ password }: AdvancedSecuritySc
 
   if (!password) return null;
 
-  return (
-    <motion.div
+  return (      <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="mt-6 p-4 bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50 dark:from-blue-900/20 dark:via-indigo-900/20 dark:to-purple-900/20 rounded-2xl border border-blue-200/50 dark:border-blue-700/50"
+      className="mt-6 p-3 sm:p-4 bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50 dark:from-blue-900/20 dark:via-indigo-900/20 dark:to-purple-900/20 rounded-2xl border border-blue-200/50 dark:border-blue-700/50"
     >
-      <div className="flex items-center gap-3 mb-4">
-        <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
-          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+        <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+          <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
           </svg>
         </div>
         <div>
-          <h3 className="font-semibold text-gray-900 dark:text-gray-100">
+          <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100">
             Advanced Security Analysis
           </h3>
-          <p className="text-sm text-gray-600 dark:text-gray-400">
+          <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
             Deep cryptographic analysis of your password
           </p>
         </div>
@@ -218,9 +217,9 @@ export default function AdvancedSecurityScanner({ password }: AdvancedSecuritySc
             className="space-y-4"
           >
             {/* Security Metrics Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div className="bg-white/50 dark:bg-gray-800/50 p-3 rounded-lg text-center">
-                <div className="h-12 flex items-center justify-center text-2xl font-bold text-blue-600 dark:text-blue-400">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4">
+              <div className="bg-white/50 dark:bg-gray-800/50 p-2 sm:p-3 rounded-lg text-center">
+                <div className="h-10 sm:h-12 flex items-center justify-center text-xl sm:text-2xl font-bold text-blue-600 dark:text-blue-400">
                   {metrics.entropy}
                 </div>
                 <div className="text-xs text-gray-600 dark:text-gray-400">
@@ -228,8 +227,8 @@ export default function AdvancedSecurityScanner({ password }: AdvancedSecuritySc
                 </div>
               </div>
               
-              <div className="bg-white/50 dark:bg-gray-800/50 p-3 rounded-lg text-center">
-                <div className="h-12 flex items-center justify-center text-2xl font-bold text-purple-600 dark:text-purple-400">
+              <div className="bg-white/50 dark:bg-gray-800/50 p-2 sm:p-3 rounded-lg text-center">
+                <div className="h-10 sm:h-12 flex items-center justify-center text-xl sm:text-2xl font-bold text-purple-600 dark:text-purple-400">
                   {metrics.diversity}%
                 </div>
                 <div className="text-xs text-gray-600 dark:text-gray-400">
@@ -237,8 +236,8 @@ export default function AdvancedSecurityScanner({ password }: AdvancedSecuritySc
                 </div>
               </div>
               
-              <div className="bg-white/50 dark:bg-gray-800/50 p-3 rounded-lg text-center">
-                <div className={`flex items-center justify-center h-12 ${getStrengthColor(metrics.strength)}`}>
+              <div className="bg-white/50 dark:bg-gray-800/50 p-2 sm:p-3 rounded-lg text-center">
+                <div className={`flex items-center justify-center h-10 sm:h-12 ${getStrengthColor(metrics.strength)}`}>
                   {getStrengthIcon(metrics.strength)}
                 </div>
                 <div className="text-xs text-gray-600 dark:text-gray-400">
@@ -246,8 +245,8 @@ export default function AdvancedSecurityScanner({ password }: AdvancedSecuritySc
                 </div>
               </div>
               
-              <div className="bg-white/50 dark:bg-gray-800/50 p-3 rounded-lg text-center">
-                <div className="h-12 flex items-center justify-center text-lg font-bold text-green-600 dark:text-green-400">
+              <div className="bg-white/50 dark:bg-gray-800/50 p-2 sm:p-3 rounded-lg text-center">
+                <div className="h-10 sm:h-12 flex items-center justify-center text-base sm:text-lg font-bold text-green-600 dark:text-green-400">
                   {metrics.crackingTime.includes('years') ? '∞' : metrics.crackingTime.split(' ')[0]}
                 </div>
                 <div className="text-xs text-gray-600 dark:text-gray-400">

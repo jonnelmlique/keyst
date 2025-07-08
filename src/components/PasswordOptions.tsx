@@ -29,18 +29,18 @@ export default function PasswordOptionsComponent({ options, onOptionsChange }: P
       </h3>
 
       {/* Password Length */}
-      <div className="space-y-4">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
-            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div className="space-y-3 sm:space-y-4">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
+            <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
             </svg>
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+            <label className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300">
               Password Length
             </label>
-            <div className="text-2xl font-bold gradient-text">{options.length}</div>
+            <div className="text-xl sm:text-2xl font-bold gradient-text">{options.length}</div>
           </div>
         </div>
         
@@ -73,38 +73,38 @@ export default function PasswordOptionsComponent({ options, onOptionsChange }: P
           </div>
           
           {/* Length recommendations */}
-          <div className="grid grid-cols-2 gap-2 text-xs">
-            <div className={`p-2 rounded-lg text-center transition-all duration-200 ${
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-1 xs:gap-2 text-xs">
+            <div className={`p-1 xs:p-1.5 sm:p-2 rounded-lg text-center transition-all duration-200 ${
               options.length >= 8 && options.length < 12 
                 ? 'bg-yellow-100 dark:bg-yellow-900/20 text-yellow-800 dark:text-yellow-300 border border-yellow-200 dark:border-yellow-800' 
                 : 'bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400'
             }`}>
-              <div className="font-medium">8-11 chars</div>
-              <div>Basic</div>
+              <div className="font-medium text-2xs xs:text-xs">8-11</div>
+              <div className="text-2xs xs:text-xs">Basic</div>
             </div>
-            <div className={`p-2 rounded-lg text-center transition-all duration-200 ${
+            <div className={`p-1 xs:p-1.5 sm:p-2 rounded-lg text-center transition-all duration-200 ${
               options.length >= 12 && options.length < 20 
                 ? 'bg-blue-100 dark:bg-blue-900/20 text-blue-800 dark:text-blue-300 border border-blue-200 dark:border-blue-800' 
                 : 'bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400'
             }`}>
-              <div className="font-medium">12-19 chars</div>
-              <div>Recommended</div>
+              <div className="font-medium text-2xs xs:text-xs">12-19</div>
+              <div className="text-2xs xs:text-xs">Good</div>
             </div>
-            <div className={`p-2 rounded-lg text-center transition-all duration-200 ${
+            <div className={`p-1 xs:p-1.5 sm:p-2 rounded-lg text-center transition-all duration-200 ${
               options.length >= 20 && options.length < 32 
                 ? 'bg-green-100 dark:bg-green-900/20 text-green-800 dark:text-green-300 border border-green-200 dark:border-green-800' 
                 : 'bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400'
             }`}>
-              <div className="font-medium">20-31 chars</div>
-              <div>Strong</div>
+              <div className="font-medium text-2xs xs:text-xs">20-31</div>
+              <div className="text-2xs xs:text-xs">Strong</div>
             </div>
-            <div className={`p-2 rounded-lg text-center transition-all duration-200 ${
+            <div className={`p-1 xs:p-1.5 sm:p-2 rounded-lg text-center transition-all duration-200 ${
               options.length >= 32 
                 ? 'bg-purple-100 dark:bg-purple-900/20 text-purple-800 dark:text-purple-300 border border-purple-200 dark:border-purple-800' 
                 : 'bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400'
             }`}>
-              <div className="font-medium">32+ chars</div>
-              <div>Maximum</div>
+              <div className="font-medium text-2xs xs:text-xs">32+ chars</div>
+              <div className="text-2xs xs:text-xs">Maximum</div>
             </div>
           </div>
         </div>
@@ -155,15 +155,15 @@ export default function PasswordOptionsComponent({ options, onOptionsChange }: P
                 onChange={() => handleCheckboxChange(option.key)}
                 className="checkbox-field"
               />
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center">
-                  {option.icon}
+              <div className="flex items-center gap-2 sm:gap-3">
+                <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center">
+                  <div className="scale-75 sm:scale-100">{option.icon}</div>
                 </div>
                 <div className="flex-1">
-                  <div className="text-sm font-medium text-gray-900 dark:text-gray-100">
+                  <div className="text-xs sm:text-sm font-medium text-gray-900 dark:text-gray-100">
                     {option.label}
                   </div>
-                  <div className="text-xs text-gray-500 dark:text-gray-400 font-mono mt-1">
+                  <div className="text-2xs sm:text-xs text-gray-500 dark:text-gray-400 font-mono mt-1">
                     {option.example}
                   </div>
                 </div>
@@ -183,7 +183,7 @@ export default function PasswordOptionsComponent({ options, onOptionsChange }: P
             className="space-y-2"
           >
             <motion.label
-              className="flex items-center gap-3 p-4 glass-card cursor-pointer hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-all duration-300 border border-blue-200/50 dark:border-blue-700/50"
+              className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 glass-card cursor-pointer hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-all duration-300 border border-blue-200/50 dark:border-blue-700/50"
               whileHover={{ scale: 1.01 }}
               whileTap={{ scale: 0.99 }}
             >
@@ -193,15 +193,17 @@ export default function PasswordOptionsComponent({ options, onOptionsChange }: P
                 onChange={() => handleCheckboxChange('includeExtendedSymbols')}
                 className="checkbox-field"
               />
-              <ExtendedSymbolIcon className="w-6 h-6 text-amber-500" />
+              <div className="w-7 h-7 sm:w-8 sm:h-8 bg-amber-100 dark:bg-amber-900/20 rounded-lg flex items-center justify-center">
+                <div className="scale-75 sm:scale-100"><ExtendedSymbolIcon className="w-5 h-5 sm:w-6 sm:h-6 text-amber-500" /></div>
+              </div>
               <div className="flex-1">
-                <div className="text-sm font-medium text-gray-900 dark:text-gray-100">
+                <div className="text-xs sm:text-sm font-medium text-gray-900 dark:text-gray-100">
                   Extended Symbol Set
                 </div>
-                <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                <div className="text-2xs sm:text-xs text-gray-500 dark:text-gray-400 mt-0.5 sm:mt-1">
                   Includes quotes, backslashes, and additional special characters
                 </div>
-                <div className="text-xs text-gray-600 dark:text-gray-500 font-mono mt-1">
+                <div className="text-2xs sm:text-xs text-gray-600 dark:text-gray-500 font-mono mt-0.5 sm:mt-1">
                   ~`"'\/?
                 </div>
               </div>
@@ -249,15 +251,15 @@ export default function PasswordOptionsComponent({ options, onOptionsChange }: P
                 onChange={() => handleCheckboxChange(option.key)}
                 className="checkbox-field"
               />
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center">
-                  {option.icon}
+              <div className="flex items-center gap-2 sm:gap-3">
+                <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center">
+                  <div className="scale-75 sm:scale-100">{option.icon}</div>
                 </div>
                 <div className="flex-1">
-                  <div className="text-sm font-medium text-gray-900 dark:text-gray-100">
+                  <div className="text-xs sm:text-sm font-medium text-gray-900 dark:text-gray-100">
                     {option.label}
                   </div>
-                  <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                  <div className="text-2xs sm:text-xs text-gray-500 dark:text-gray-400 mt-0.5 sm:mt-1">
                     {option.desc}
                   </div>
                 </div>

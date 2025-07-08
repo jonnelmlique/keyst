@@ -7,6 +7,12 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      screens: {
+        'xs': '475px',
+      },
+      fontSize: {
+        '2xs': '0.65rem',
+      },
       colors: {
         gray: {
           50: '#f9fafb',
